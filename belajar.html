@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Pendaftaran Siswa</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+
+        form {
+            width: 500px;
+        }
+
+        input, select, textarea {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            padding: 7px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="file"],
+        select,
+        textarea {
+            width: 100%;
+        }
+
+        fieldset {
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 8px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Form Pendaftaran Siswa</h2>
+
+    <form action="https://rplcoders.com/proses.php"
+          method="POST"
+          enctype="multipart/form-data">
+
+        <fieldset>
+            <legend>Data Siswa</legend>
+
+            <br><label>Nama Lengkap:</label><br>
+            <input type="text"
+                   name="nama"
+                   placeholder="Masukkan nama"
+                   pattern="[A-Za-z ]{3,50}"
+                   required>
+            
+                   <br><label>Tanggal Lahir:</label><br>
+            <input type="date"
+                   name="tanggal_lahir"
+                   required>
+           
+                   <br><label>Jenis Kelamin:</label><br>
+
+            <input type="radio"
+                   name="jenis_kelamin"
+                   value="Laki-laki"
+                   required>
+            Laki-laki
+
+            <input type="radio"
+                   name="jenis_kelamin"
+                   value="Perempuan">
+            Perempuan
+
+            <br><label>Ekstrakurikuler yang diminati:</label><br>
+
+           <input type="checkbox" name="ekskul[]" value="Pramuka">
+            Pramuka
+
+           <input type="checkbox" name="ekskul[]" value="Futsal">
+             Futsal
+
+           <input type="checkbox" name="ekskul[]" value="Basket">
+             Basket
+
+           <input type="checkbox" name="ekskul[]" value="PMR">
+            PMR
+
+           <input type="checkbox" name="ekskul[]" value="Paskibra">
+            Paskibra
+
+            <br><label>Jurusan:</label><br>
+
+            <select name="jurusan" required>
+                <option value="">-- Pilih Jurusan --</option>
+                <option value="RPL">Rekayasa Perangkat Lunak</option>
+                <option value="TKJ">Teknik Komputer dan Jaringan</option>
+                <option value="DKV">Desain Komunikasi Visual</option>
+                <option value="ULW">Usaha Layanan Wisata</option>
+                <option value="DPIB">Desain Pengembangan Instruktur Bangunan</option>
+                <option value="PSPT">Produk Dan Siaran Program Televisi</option>
+                <option value="TKR">Teknik Kendaraan Ringan</option>
+                <option value="TBSM">Teknik Bisnis Sepeda Motor</option>
+            </select>
+
+            <br><label>Kota:</label><br>
+
+            <input type="text"
+                   name="kota"
+                   list="daftar-kota"
+                   placeholder="Ketik kota"
+                   required>
+
+            <datalist id="daftar-kota">
+                <option value="Pacitan">
+                <option value="Ponorogo">
+                <option value="Madiun">
+                <option value="Surabaya">
+                <option value="Malang">
+            </datalist>
+
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Data Tambahan</legend>
+
+            <label>Alamat:</label><br>
+
+            <textarea name="alamat"
+                      rows="4"
+                      placeholder="Masukkan alamat"
+                      required></textarea>
+
+            <br><label>Upload Foto:</label><br>
+
+            <input type="file"
+                   name="foto"
+                   accept=".jpg,.jpeg,.png"
+                   required>
+
+        </fieldset>
+
+
+        <button type="submit">Kirim</button>
+
+    </form>
+
+</body>
+</html>
